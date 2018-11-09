@@ -1,38 +1,28 @@
 package kr.or.ddit.user.web;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-import org.junit.Before;
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations= {"classpath:kr/or/ddit/config/spring/servlet-context.xml",
-								"classpath:kr/or/ddit/config/spring/root-context.xml"})
-@WebAppConfiguration		//스프링 컨테이너를 web기반 컨테이너로 생성
-public class UserControllerTest {
+import kr.or.ddit.test.ControllerTestConfig;
+import kr.or.ddit.user.model.UserVo;
+import kr.or.ddit.user.service.UserServiceInf;
 
-	@Autowired
-	private WebApplicationContext ctx;
+
+public class UserControllerTest extends ControllerTestConfig {
+
 	
-	private MockMvc mockMvc;
 	
-	//test 메소드 시작전 준비작업을 실행하는 메소드
-	@Before
-	public void setUp() {
-		mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
-	}
 	
 	/**  
 	* Method   : loginViewTest 
@@ -88,5 +78,31 @@ public class UserControllerTest {
 		/***Then***/
 			assertEquals("/login/login", mav.getViewName());
 	}
+	
+	
+	
+	
+	
+	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+

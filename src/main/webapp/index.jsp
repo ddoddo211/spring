@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	index.jsp
+	<script type="text/javascript">
+		document.location="/user/loginView";
+	</script>
 </body>
 </html>
